@@ -10,38 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_07_13_171800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "Admin", primary_key: "Id", id: :integer, default: nil, force: :cascade do |t|
-    t.string "user", null: false
-    t.string "password", null: false
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "attendance", id: false, force: :cascade do |t|
-    t.date "date", null: false
-    t.integer "id_employeed", null: false
-    t.integer "id_cbranch", null: false
-    t.integer "private_num", null: false
-    t.index ["id_cbranch"], name: "fki_fk_cbranch"
-    t.index ["id_employeed"], name: "fki_fk_employeed"
+  create_table "employees", force: :cascade do |t|
+    t.integer "num_employee"
+    t.integer "private_num"
+    t.string "name"
+    t.string "email"
+    t.string "position"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "company_branches", primary_key: "Id", id: :integer, default: nil, force: :cascade do |t|
-    t.text "name", null: false
-    t.text "Adress", null: false
-  end
-
-  create_table "employeed", primary_key: "Id", id: :integer, default: nil, force: :cascade do |t|
-    t.integer "num_employeed", null: false
-    t.integer "private_num", null: false
-    t.text "email", null: false
-    t.text "name", null: false
-    t.text "position", null: false
-  end
-
-  add_foreign_key "attendance", "company_branches", column: "id_cbranch", primary_key: "Id", name: "fk_cbranch"
-  add_foreign_key "attendance", "employeed", column: "id_employeed", primary_key: "Id", name: "fk_employeed", on_update: :restrict, on_delete: :restrict
 end
