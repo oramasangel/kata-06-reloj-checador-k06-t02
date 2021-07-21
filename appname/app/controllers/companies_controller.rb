@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController 
-  layout "company", only: [:edit, :show, :new, :index]
+  #layout "company", only: [:edit, :show, :new, :index]
   before_action :set_company, only: %i[ show edit update destroy ]
 
   # GET /companies or /companies.json
@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.save
         format.html { redirect_to @company, notice: "Company branch was successfully created." }
-        format.json { render :show, status: :created, location: @company }
+        format.json { render status: :created, location: @company }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @company.errors, status: :unprocessable_entity }
