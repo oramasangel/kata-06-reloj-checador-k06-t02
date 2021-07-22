@@ -25,8 +25,8 @@ development:
   <<: *default
   database: checkclock
   host: localhost 
-  username: postgres
-  password: "1234"
+  username: angeloramas
+  password: "740vur4pl222"
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -83,6 +83,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5} %>
+  <<: *default
+  database: appname_production
+  username: appname
+  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
