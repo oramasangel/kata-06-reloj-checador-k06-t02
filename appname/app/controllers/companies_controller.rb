@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController 
-  #layout "company", only: [:edit, :show, :new, :index]
   before_action :set_company, only: %i[ show edit update destroy ]
 
   # GET /companies or /companies.json
@@ -35,7 +34,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.update(company_params)
         format.html { redirect_to @company, notice: "Company branch was successfully updated." }
-        format.json { render :show, status: :ok, location: @company }
+        format.json { render status: :ok, location: @company }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @company.errors, status: :unprocessable_entity }
