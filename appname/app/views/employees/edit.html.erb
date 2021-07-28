@@ -2,5 +2,11 @@
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to 'Show', @employee %> |
-<%= link_to 'Back', employees_path %>
+
+<div class="container-md">
+    <h1>Editing Employee</h1>
+    <br>
+    <%= render 'form', employee: @employee %>
+    <br>
+    <%= link_to 'Mostrar', @employee, :class => "btn btn-primary" %>    
+</div>
