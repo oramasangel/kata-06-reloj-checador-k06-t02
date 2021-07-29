@@ -1,9 +1,15 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+<div class="my-3 form-floating">    
+  <%= form.text_field :email, type: 'email', :class => 'form-control' %>
+  <label for="floatingInput">Correo Electrónico</label>
 </div>
 
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+<div class="my-3 form-floating">    
+  <%= form.password_field :password, :class => 'form-control'%>
+  <label for="floatingPassword">Password</label>
+</div>
+
+<div class="checkbox mb-3">
+  <label>
+    <input type="checkbox" value="remember-me"> Remember me
+  </label>
 </div>
