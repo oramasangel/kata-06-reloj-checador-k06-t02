@@ -1,16 +1,22 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<div id="clearance" class="password-reset text-center">
 
-  <p><%= t(".description") %></p>
+  <div class="container-md w-50 my-5">
+    <h2><%= t(".title") %></h2>
 
-  <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
-    </div>
+    <p><%= t(".description") %></p>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+    <%= form_for :password, url: passwords_path do |form| %>
+
+      <div class="my-3 form-floating">    
+        <%= form.text_field :email, type: 'email', :class => 'form-control' %>
+        <label for="floatingInput">Correo Electrónico</label>
+      </div>
+
+      <div class="submit-field">
+        <%= form.submit 'Reset Password', :class => 'w-50 btn btn-lg btn-primary'%>
+      </div>
+
+    <% end %>
+
+  </div>
 </div>
