@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
-    def show
+    before_action :require_login
+    layout 'admin'
+    def index
     end
 end

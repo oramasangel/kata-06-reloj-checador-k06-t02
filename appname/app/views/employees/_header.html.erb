@@ -1,31 +1,36 @@
 <header>
-    <nav class="back-blue black large-padding">
-        <ul class="row center-xs" style="list-style: none;">
-          <li class="col-md">
-            Home
-          </li>
-          <li class="col-md">
-            <%= link_to "Employees", employees_path %>
-          </li>
-          <li class="col-md">
-            Company Branch
-          </li>
-          <li class="col-md">
-            Reports
-          </li>
-          <li class="col-md">
-            IMG
-          </li>
-          
-          <li class="col-md">
-            <% if signed_in? %>
-                Signed in as: <%= current_user.email %>
-                <%= button_to 'Sign out', sign_out_path, method: :delete %>
-            <% else %>
-                <%= link_to 'Sign in', sign_in_path %>
-            <% end %>
-          </li>
+  <nav class="back-blue black large-padding">
+    <ul class="row center-xs" style="list-style: none;">
+      <li class="col-md">            
+        <%= link_to 'Home', root_path, :class => 'text-light' %>
+      </li>
 
-        </ul>
-    </nav>
+      <li class="col-md">
+        <%= link_to "Employees", employees_path, :class => 'text-light' %>
+      </li>
+
+      <li class="col-md">
+        <%= link_to 'Company Branch', companies_path, :class => 'text-light' %>  
+      </li>
+
+      <li class="col-md text-light">
+        Reports
+      </li>
+      
+      <li class="col-md text-light">
+        IMG
+      </li>
+      
+      <li class="col-md text-light">
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <li class="col-md">
+            <%= button_to 'Sign out', sign_out_path, method: :delete, :class => 'btn btn-link text-warning' %>
+          </li>                    
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path, :class => 'btn btn-link' %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
 </header>
