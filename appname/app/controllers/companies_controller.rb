@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController 
-  layout "company", only: [:edit, :new, :index]
   before_action :set_company, only: %i[ show edit update destroy ]
 
   # GET /companies or /companies.json
