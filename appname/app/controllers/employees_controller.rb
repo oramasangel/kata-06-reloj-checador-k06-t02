@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :require_login
   before_action :set_employee, only: %i[ show edit update destroy ]
-  layout 'employee'
+  layout 'admin'
   def index
     @employees = Employee.all
   end
