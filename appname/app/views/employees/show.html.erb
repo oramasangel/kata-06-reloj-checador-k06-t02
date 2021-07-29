@@ -1,39 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @employee.id %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3"><strong>Id:</strong></div>
+    <div class="col-3"><%= @employee.id %></div>
+  
+    <div class="col-3"><strong>Num employee:</strong></div>
+    <div class="col-3"><%= @employee.num_employee %></div>
 
-<p>
-  <strong>Num employee:</strong>
-  <%= @employee.num_employee %>
-</p>
+    <div class="col-3"><strong>Private num:</strong></div>
+    <div class="col-3"><%= @employee.private_num %></div>
 
-<p>
-  <strong>Private num:</strong>
-  <%= @employee.private_num %>
-</p>
+    <div class="col-3"><strong>Name:</strong></div>
+    <div class="col-3"><%= @employee.name %></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
+    <div class="col-3"><strong>Email:</strong></div>
+    <div class="col-3"><%= @employee.email %></div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
+    <div class="col-3"><strong>Position:</strong></div>
+    <div class="col-3"><%= @employee.position %></div>
 
-<p>
-  <strong>Position:</strong>
-  <%= @employee.position %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @employee.status %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+    <div class="col-3"><strong>Status:</strong></div>
+    <div class="col-3"><%= @employee.status %></div>
+  </div>
+  <br>
+  <%= link_to 'Editar', edit_employee_path(@employee), :class => "btn btn-primary" %>
+  <%= link_to 'Volver', employees_path, :class => "btn btn-primary" %>
+</div>
