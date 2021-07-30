@@ -1,6 +1,7 @@
-class CompaniesController < ApplicationController 
+class CompaniesController < ApplicationController
+  before_action :require_login
   before_action :set_company, only: %i[ show edit update destroy ]
-
+  layout 'admin'
   # GET /companies or /companies.json
   def index
     @companies = Company.all 
