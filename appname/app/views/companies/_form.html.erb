@@ -11,23 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
-  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <label for="inputName" class="form-label">Nombre de la Sucursal</label>
+      <%= form.text_field :name, :class => "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Domicilio de la Sucursal</label>
+      <%= form.text_field :address, :class => "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions col-12">
+      <% if action_name=="edit" %>
+          <%= form.submit "Actualizar Sucursal", :class => "btn btn-primary" %>
+        <% else %>
+          <%= form.submit "Crear Sucursal", :class => "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 
 <% end %>
