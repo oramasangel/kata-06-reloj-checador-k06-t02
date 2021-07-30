@@ -22,6 +22,9 @@
 
     <div class="col-3"><strong>Status:</strong></div>
     <div class="col-3"><%= @employee.status %></div>
+
+    <div class="col-3"><strong>compañia:</strong></div>
+    <div class="col-3"><%= @employee.company_id %></div>
   </div>
   <br>
   <%= link_to 'Editar', edit_employee_path(@employee), :class => "btn btn-primary" %>
