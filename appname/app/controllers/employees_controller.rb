@@ -50,15 +50,16 @@ class EmployeesController < ApplicationController
       format.html { redirect_to employees_url, notice: "Employee was successfully destroyed." }
       format.json { head :no_content }
     end
-  end
-
+  
   private
     def set_employee
       @employee = Employee.find(params[:id])
     end
 
     def employee_params
-      params.require(:employee).permit(:id, :num_employee, :private_num, :name, :email, :position, :status)
+      params.require(:employee).permit(:id, :num_employee, :private_num, :name, :email, :position, :status, :company_id)
     end
+  end
+  
 end
   
