@@ -38,7 +38,12 @@
       <%= form.text_field :position, :class => "form-control" %>
     </div>
 
-    <div class="col-12">
+    <div class="col-6">
+      <label for="inputAddress3" class="form-label">Compañia</label>      
+      <%= form.collection_select( "company_id", Company.all,:id, :name, {:include_blank => false},{:class => "form-control"} ) %>
+    </div>
+
+    <div class="col-6">
       <div class="form-check">        
         <%= form.check_box :status, :class => "form-check-input" %>
         <label class="form-check-label" for="gridCheck">
