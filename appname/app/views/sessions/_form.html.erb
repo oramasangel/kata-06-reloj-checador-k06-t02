@@ -1,16 +1,18 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+  <div class="my-3">
+    <div class=" my-3 form-floating center-block">    
+      <%= form.text_field :email, type: 'email', :class => 'form-control' %>
+      <label for="floatingInput">Correo Electrónico</label>
+    </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div class="my-3 form-floating">    
+      <%= form.password_field :password, :class => 'form-control'%>
+      <label for="floatingPassword">Password</label>
+    </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
+    <div class="my-3 submit-field">
+      <%= form.submit 'Sign In', :class => 'w-50 btn btn-lg btn-primary'%>
+    </div>
   </div>
 
   <div class="other-links">
